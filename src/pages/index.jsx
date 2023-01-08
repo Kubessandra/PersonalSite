@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useRouter } from 'next/router'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -13,10 +14,9 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoAnima from '@/images/logos/animalogo.png'
+import logoLocomotive from '@/images/logos/locomotive.jpeg'
+import logoRedpillLive from '@/images/logos/redpilllive.jpeg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
@@ -104,9 +104,34 @@ function SocialLink({ icon: Icon, ...props }) {
 }
 
 function Newsletter() {
+  const router = useRouter()
+
+  const sendEmail = async (e) => {
+    e.preventDefault()
+    const email = e.target[0].value
+    const formID = '3986623'
+    const APIKey = '89ztU92kcROIRpnd0tWZvA'
+    const res = await fetch(
+      `https://api.convertkit.com/v3/forms/${formID}/subscribe`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        body: JSON.stringify({
+          api_key: APIKey,
+          email,
+        }),
+      }
+    )
+    if (!res.ok) return console.error(res.error)
+    router.push('/thank-you')
+  }
+
   return (
     <form
       action="/thank-you"
+      onSubmit={sendEmail}
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -135,35 +160,28 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Anima App',
+      title: 'Software Engineer',
+      logo: logoAnima,
+      start: '2022',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: 'Locomotive',
+      title: 'Software Engineer',
+      logo: logoLocomotive,
+      start: '2022',
+      end: '2022',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Redpill Live',
+      title: 'Chief Technology Officer',
+      logo: logoRedpillLive,
+      start: '2018',
+      end: '2022',
     },
   ]
 
@@ -207,10 +225,10 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      {/* <Button href="#" variant="secondary" className="group mt-6 w-full"> */}
+      {/*   Download CV */}
+      {/*   <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" /> */}
+      {/* </Button> */}
     </div>
   )
 }
