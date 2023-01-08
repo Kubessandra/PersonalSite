@@ -254,7 +254,7 @@ function Photos() {
 export default function Home({ articles }) {
   const imageUrl = 'https://kubessandra.com/og-image-default.jpg'
   const desc =
-    "Hey there! I'm Kubessandra, a software engineer and entrepreneur. I love learning new things about programming and technology, and then coding them up into something amazing. I also enjoy taking on challenges – nothing is impossible! I try to do a lot of open source work, and you can often find me streaming my development work on Twitch."
+    "I'm Kubessandra, a software engineer and entrepreneur. I love learning new things about programming and technology. I also enjoy taking on challenges – nothing is impossible! I try to do a lot of open source work, and you can often find me streaming my development work on Twitch."
   const title = 'Kubessandra - Software Engineer, entrepreneur and streamer'
 
   return (
