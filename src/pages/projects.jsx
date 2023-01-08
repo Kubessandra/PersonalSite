@@ -12,7 +12,7 @@ const projects = [
     name: 'Motionify',
     description: 'To be defined',
     link: {
-      href: 'http://githubg.com/Kubessandra/Motionify',
+      href: 'https://github.com/Kubessandra/Motionify',
       label: 'github.com',
     },
     logo: logoMotionify,
