@@ -1,19 +1,17 @@
 import Image from 'next/image'
 import Head from 'next/head'
-import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import { GITHUB, TWITTER, LINKEDIN } from '../lib/constants'
-import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
+import { SocialRow } from '@/components/SocialRow'
+import image1 from '@/images/photos/image-1.png'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image6 from '@/images/photos/image-6.png'
 import logoAnima from '@/images/logos/animalogo.png'
 import logoLocomotive from '@/images/logos/locomotive.jpeg'
 import logoRedpillLive from '@/images/logos/redpilllive.jpeg'
@@ -92,14 +90,6 @@ function Article({ article }) {
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
     </Card>
-  )
-}
-
-function SocialLink({ icon: Icon, ...props }) {
-  return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
   )
 }
 
@@ -239,7 +229,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {[image1, image2, image3, image6, image4].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
@@ -285,28 +275,7 @@ export default function Home({ articles }) {
             lot of open source work, and you can often find me streaming my
             development work on Twitch.
           </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href={TWITTER}
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            {/* <SocialLink */}
-            {/*   href="https://instagram.com" */}
-            {/*   aria-label="Follow on Instagram" */}
-            {/*   icon={InstagramIcon} */}
-            {/* /> */}
-            <SocialLink
-              href={GITHUB}
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href={LINKEDIN}
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
-          </div>
+          <SocialRow />
         </div>
       </Container>
       <Photos />

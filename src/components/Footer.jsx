@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { SocialRow } from '@/components/SocialRow'
 import { Container } from '@/components/Container'
 
 function NavLink({ href, children }) {
@@ -26,10 +27,13 @@ export function Footer() {
                 {/* <NavLink href="/speaking">Speaking</NavLink> */}
                 <NavLink href="/uses">Uses</NavLink>
               </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Kubessandra. All rights
-                reserved.
-              </p>
+              <div className="flex flex-col gap-6 items-end">
+                <SocialRow />
+                <p className="text-sm text-zinc-400 dark:text-zinc-500">
+                  &copy; {new Date().getFullYear()} Kubessandra. All rights
+                  reserved.
+                </p>
+              </div>
             </div>
           </Container.Inner>
         </div>

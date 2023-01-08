@@ -22,12 +22,12 @@
     }
   },
   "include": [
-    "./src/**/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "./*.js",
-    "./src/**/*.js"
+    "./src/**/*.js",
+    "./src/**/*"
   ],
   "exclude": ["node_modules"]
 }
