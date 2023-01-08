@@ -265,7 +265,7 @@ export default function Home({ articles }) {
         <meta property="og:image" content={imageUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:image" content={imageUrl} />
         <meta name="twitter:card" content="summary_large_image" />
