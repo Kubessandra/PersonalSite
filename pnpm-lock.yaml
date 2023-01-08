@@ -7,6 +7,7 @@ specifiers:
   '@mdx-js/react': ^2.1.5
   '@next/mdx': ^13.0.2
   '@tailwindcss/typography': ^0.5.4
+  '@vercel/analytics': ^0.1.6
   autoprefixer: ^10.4.12
   clsx: ^1.2.1
   eslint: 8.26.0
@@ -33,6 +34,7 @@ dependencies:
   '@mdx-js/react': 2.2.1_react@18.2.0
   '@next/mdx': 13.1.1_vvg67iglxhejglpl7nsv3pjzui
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
+  '@vercel/analytics': 0.1.6_react@18.2.0
   autoprefixer: 10.4.13_postcss@8.4.20
   clsx: 1.2.1
   fast-glob: 3.2.12
@@ -556,6 +558,14 @@ packages:
       '@typescript-eslint/types': 5.48.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/0.1.6_react@18.2.0:
+    resolution: {integrity: sha512-zNd5pj3iDvq8IMBQHa1YRcIteiw6ZiPB8AsONHd8ieFXlNpLqhXfIYnf4WvTfZ7S1NSJ++mIM14aJnNac/VMXQ==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@webassemblyjs/ast/1.11.1:
     resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==}

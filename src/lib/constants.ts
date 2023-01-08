@@ -1,0 +1,5 @@
+export const TWITTER = 'https://twitter.com/kubessandra'
+export const TWITCH = 'https://twitch.tv/kubessandra'
+export const LINKEDIN = 'https://www.linkedin.com/in/aymeric-beudaert-138351102'
+export const GITHUB = 'https://github.com/kubessandra'
+export const INSTAGRAM = ''
