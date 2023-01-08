@@ -37,7 +37,7 @@ export function ArticleLayout({
         <meta name="description" content={meta.description} />
         <meta
           property="og:image"
-          content={`https://Kubessandra.com/${meta.imagePath}`}
+          content={`https://kubessandra.com/${meta.imagePath}`}
         />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
