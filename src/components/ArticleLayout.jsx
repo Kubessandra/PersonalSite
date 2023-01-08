@@ -30,16 +30,23 @@ export function ArticleLayout({
     return children
   }
 
+  const imageUrl = `https://kubessandra.com/${meta.imagePath}`
+
   return (
     <>
       <Head>
         <title>{`${meta.title} - Kubessandra`}</title>
         <meta name="description" content={meta.description} />
-        <meta
-          property="og:image"
-          content={`https://kubessandra.com/${meta.imagePath}`}
-        />
+        <meta property="og:image" content={imageUrl} />
         <meta property="og:title" content={meta.title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:image" content={imageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="kubessandra.com" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={imageUrl} />
         <meta property="og:description" content={meta.description} />
       </Head>
       <Container className="mt-16 lg:mt-32">

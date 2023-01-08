@@ -239,6 +239,7 @@ function Photos() {
           >
             <Image
               src={image}
+              priority={imageIndex === 1}
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
@@ -251,16 +252,27 @@ function Photos() {
 }
 
 export default function Home({ articles }) {
+  const imageUrl = 'https://kubessandra.com/og-image-default.jpg'
+  const desc =
+    "Hey there! I'm Kubessandra, a software engineer and entrepreneur. I love learning new things about programming and technology, and then coding them up into something amazing. I also enjoy taking on challenges – nothing is impossible! I try to do a lot of open source work, and you can often find me streaming my development work on Twitch."
+  const title = 'Kubessandra - Software Engineer, entrepreneur and streamer'
+
   return (
     <>
       <Head>
-        <title>
-          Kubessandra - Software Engineer, entrepreneur and streamer
-        </title>
-        <meta
-          name="description"
-          content="Hey there! I'm Kubessandra, a software engineer and entrepreneur. I love learning new things about programming and technology, and then coding them up into something amazing. I also enjoy taking on challenges – nothing is impossible! I try to do a lot of open source work, and you can often find me streaming my development work on Twitch."
-        />
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content={imageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="kubessandra.com" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:image" content={imageUrl} />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
