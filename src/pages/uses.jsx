@@ -47,7 +47,7 @@ export default function Uses() {
               single time, even under the incredibly heavy loads I put it
               through with our various launch simulations.
             </Tool>
-            <Tool title="Keychron K6 keyboard">
+            <Tool title="Keychron K6 Pro keyboard">
               Just a very good feeling with this keyboard, will probably switch
               to a custom keyboard one day.
             </Tool>
