@@ -7,7 +7,7 @@ Site used for personal used by Kubessandra on [kubessandra.com](https://kubessan
 
 ## Getting started
 
-To get started with this template, first install the npm dependencies:
+To get started with this template, first install the dependencies with pnpm:
 
 ```bash
 pnpm install
